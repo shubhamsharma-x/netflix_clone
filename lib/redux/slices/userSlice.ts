@@ -54,6 +54,7 @@ export const handleAuthStateChanged = () => (dispatch: Dispatch) => {
             const userData = getDocRef.data() as UserType;
             if (!userData) return;
 
+            console.log(userData);
             dispatch(
                 setUser({
                     session: true,

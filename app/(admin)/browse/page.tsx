@@ -19,6 +19,7 @@ const App = (): JSX.Element => {
 
         const addSubscription = async () => {
             try {
+                if (!subscription) return;
                 const updatedDocRef = await updateDoc(
                     doc(db, "users", user._id),
                     { subscription: { type: subscription } }
