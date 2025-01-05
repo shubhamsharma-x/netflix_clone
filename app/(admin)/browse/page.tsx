@@ -11,11 +11,15 @@ import { JSX, useEffect } from "react";
 
 // Netflix
 const App = (): JSX.Element => {
+    const router = useRouter();
     const subscription = useSearchParams().get("subscription");
     const { user } = useAppSelector((state) => state.user);
 
     useEffect(() => {
-        if (!user._id) return;
+        if (!user._id) {
+            router.replace("/");
+            return;
+        }
 
         const addSubscription = async () => {
             try {

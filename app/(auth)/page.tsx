@@ -12,7 +12,7 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth, db } from "@/lib/firebase/firebase.config";
 import { doc, setDoc } from "firebase/firestore";
 
-// Login page   
+// Login page
 const Login = () => {
     const router = useRouter();
     const { user, session, isPending } = useAppSelector((state) => state.user);
